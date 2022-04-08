@@ -1,6 +1,8 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+publish = "public"  // default hugo build folder
+command = "hugo --gc --minify" // hugo build command
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[context.production.environment]
+HUGO_VERSION = "0.96.0"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
